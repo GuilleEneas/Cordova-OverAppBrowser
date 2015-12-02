@@ -253,6 +253,18 @@ public class OverAppBrowser extends CordovaPlugin {
             pluginResult.setKeepCallback(true);
             this.callbackContext.sendPluginResult(pluginResult);
 
+        }
+        else if (action.equals("navigate")) {
+            String newUrl = args.getString(0);
+            navigate(newUrl);
+            // float to = (float) args.getDouble(0);
+            // int duration = args.getInt(1);
+
+            // fadeTo(to, duration);
+            // PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+            // pluginResult.setKeepCallback(true);
+            // this.callbackContext.sendPluginResult(pluginResult);
+
         } else {
             return false;
         }

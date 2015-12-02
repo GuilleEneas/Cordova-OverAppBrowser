@@ -30,6 +30,9 @@ OverAppBrowser.prototype = {
     close: function (eventname) {
         exec(null, null, "OverAppBrowser", "close", []);
     },
+    goTo: function(newUrl) {
+        exec(null, null, 'OverAppBrowser', 'navigate', [newUrl]);
+    },
     show: function (eventname) {
         exec(null, null, "OverAppBrowser", "show", []);
     },
