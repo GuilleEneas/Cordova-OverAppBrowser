@@ -255,8 +255,13 @@ public class OverAppBrowser extends CordovaPlugin {
 
         }
         else if (action.equals("navigate")) {
-            String newUrl = args.getString(0);
-            navigate(newUrl);
+            cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                    String newUrl = args.getString(0);
+                    navigate(newUrl);
+                    callbackContext.success(); // Thread-safe.
+                }
+            });
             // float to = (float) args.getDouble(0);
             // int duration = args.getInt(1);
 
