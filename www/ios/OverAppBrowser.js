@@ -31,7 +31,8 @@ OverAppBrowser.prototype = {
         exec(null, null, "OverAppBrowser", "close", []);
     },
     goTo: function(newUrl) {
-        exec(null, null, 'OverAppBrowser', 'navigate', [newUrl]);
+        exec(function() {console.log("js interface working!!");}, 
+            function() {console.log("js interface working!!");}, 'OverAppBrowser', 'navigate', [newUrl]);
     },
     show: function (eventname) {
         exec(null, null, "OverAppBrowser", "show", []);
